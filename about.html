@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - YourBrand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* About Page Specific Styles */
+        #about-hero {
+            background-image: url("images/about_hero.png");
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #about-hero::after {
+            content: "";
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.4);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #about-hero h1 {
+            color: #fff;
+            z-index: 10;
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-section {
+            padding: 80px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .about-text {
+            width: 50%;
+            padding-right: 40px;
+        }
+
+        .about-text h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .about-img {
+            width: 45%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .about-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Animation Classes */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s ease-out;
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 1s ease-out;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+
+        .active-anim {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+
+        #features {
+            display: flex;
+            justify-content: space-between;
+            padding: 60px 40px;
+            background-color: #f9f9f9;
+        }
+
+        .feature-box {
+            text-align: center;
+            width: 30%;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-box img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .feature-box h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Team Section Styles */
+        #team {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        #team h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-container :hover {
+            box-shadow: 20px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-card {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .member-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .member-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+            width: 100%;
+            padding: 0 20px;
+            z-index: 2;
+        }
+
+        .member-info h3 {
+            color: #000;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .member-info h5 {
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /* Hover Effects */
+        .member-card:hover img {
+            filter: blur(5px);
+            transform: scale(1.1);
+        }
+
+        .member-card:hover .member-info {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 799px) {
+            .about-section {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+
+            .about-text,
+            .about-img {
+                width: 100%;
+                padding: 0;
+            }
+
+            .about-text {
+                margin-bottom: 40px;
+            }
+
+            #features {
+                flex-direction: column;
+            }
+
+            .feature-box {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .member-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--header-->
+    <section id="header">
+        <a href="index.html"><img src="images/1logo-removebg-preview.png" class="logo" alt=""></a>
+
+        <div class="babu">
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shopindex.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html">shoe</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i><span id="cart-count">0</span></a>
+                </li>
+                <a href="#" id="close"><i class="fa fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i></a>
+            <i id="bar" class="fa fa-bars"></i>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="about-hero">
+        <h1>#KnowUs</h1>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="about-section">
+        <div class="about-img slide-in-left">
+            <img src="/images/blog1.jpeg" alt="Our Team">
+        </div>
+        <div class="about-text slide-in-right">
+            <h2>Who We Are?</h2>
+            <p>
+                We are a team of passionate individuals dedicated to bringing you the best fashion trends from around
+                the world.
+                Our journey started with a simple idea: accessible style for everyone. Today, we are proud to serve
+                thousands of happy customers globally.
+            </p>
+            <p>
+                We believe in quality, sustainability, and exceptional customer service. Every product is curated with
+                love and care to ensure you look and feel your best.
+            </p>
+            <div style="background-color: #ccc; height: 2px; width: 100%; margin: 20px 0;">
+                <div style="background-color: #000; height: 2px; width: 0%; transition: width 2s ease;"
+                    id="progress-bar"></div>
+            </div>
+            <i>"Creating styles that speak louder than words."</i>
+        </div>
+    </section>
+    <!-- 
+    Features
+    <section id="features">
+        <div class="feature-box fade-in-up">
+            <img src="/images/men fash banner.jpg" alt="Quality">
+            <h4>Premium Quality</h4>
+            <p>We source only the finest materials to ensure durability and comfort in every stitch.</p>
+        </div>
+        <div class="feature-box fade-in-up" style="transition-delay: 0.2s;">
+            <img src="/images/sale black.png" alt="Community">
+            <h4>Global Community</h4>
+            <p>Join a diverse community of fashion lovers who celebrate individuality and style.</p>
+        </div>
+        <div class="feature-box fade-in-up" style="transition-delay: 0.4s;">
+            <img src="images/singleshoe/shoe1.png" onerror="this.src='images/1logo-removebg-preview.png'"
+                alt="Fast Delivery">
+            <h4>Fast Delivery</h4>
+            <p>Get your favorite styles delivered to your doorstep in record time.</p>
+        </div>
+    </section> -->
+
+    <!-- Our Team Section -->
+    <section id="team" class="section-p1">
+        <h2 class="fade-in-up">Our Team</h2>
+        <div class="team-container">
+
+            <div class="member-card fade-in-up" style="transition-delay: 0.1s;">
+                <img src="/images/flashman.jpeg" alt="Owner">
+                <div class="member-info">
+                    <h3>Mr.flash Man</h3>
+                    <h5>Owner & Founder</h5>
+                </div>
+            </div>
+
+            <div class="member-card fade-in-up" style="transition-delay: 0.3s;">
+                <img src="/images/rikki.jpeg" alt="Head">
+                <div class="member-info">
+                    <h3>Ms.Buntyy</h3>
+                    <h5>Head of Design</h5>
+                </div>
+            </div>
+
+            <div class="member-card fade-in-up" style="transition-delay: 0.5s;">
+                <img src="/images/cr.jpeg" alt="Leader">
+                <div class="member-info">
+                    <h3>Mr.CR</h3>
+                    <h5>Team Leader</h5>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="ecom-footer">
+        <div class="footer-top">
+
+            <div class="footer-column">
+                <h3>YourBrand</h3>
+                <p>YourBrand is your trusted marketplace for quality products at best prices.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                <h4 style="margin-top:15px;">Visit Our Store</h4>
+                <a class="map-link" href="https://maps.google.com" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i> Dummy Location Map
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 YourBrand. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Scroll Animation Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-anim');
+                        if (entry.target.querySelector('#progress-bar')) {
+                            entry.target.querySelector('#progress-bar').style.width = "100%";
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in-up');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

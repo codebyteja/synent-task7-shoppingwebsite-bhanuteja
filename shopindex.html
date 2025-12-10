@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoppage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<style>
+    @keyframes appear {
+        from {
+            opacity: 0;
+            scale: 0.5;
+        }
+
+        to {
+            opacity: 1;
+            scale: 1;
+        }
+    }
+
+    .pro-container {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 49%;
+    }
+
+
+    .ecom-footer {
+        padding-top: 20px;
+
+
+    }
+</style>
+
+
+<body>
+    <!--header-->
+    <section id="header">
+        <a href="#"><img src="images/1logo-removebg-preview.png" class="logo" alt="">
+
+            <div class="babu">
+                <ul id="navbar">
+                    <li><a onclick="window.location.href='index.html';">Home</a></li>
+                    <li><a class="active" href="shopindex.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog.html">shoe</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+
+                    <li><a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i><span
+                                id="cart-count">0</span></a></li>
+                    <a href="#" id="close"><i class="fa fa-times"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"> <i class="fa-solid fa-cart-arrow-down"></i></a>
+                <i id="bar" class="fa fa-bars"></i>
+            </div>
+    </section>
+
+    <section id="pageheader">
+        <div class="hero-text">
+
+        </div>
+    </section>
+
+
+
+    <div class="product-heading">
+
+    </div>
+    <section id="product">
+
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/t1.jpg" onclick="window.location.href='singlepro.html?id=0';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$78</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[0]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/shi1.jpg" onclick="window.location.href='singlepro.html?id=1';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[1]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/t2.jpg" onclick="window.location.href='singlepro.html?id=2';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[2]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+
+
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/shi2.jpg" onclick="window.location.href='singlepro.html?id=3';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[3]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/shi1.jpg" onclick="window.location.href='singlepro.html?id=4';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[4]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+        <div class="pro-container" id="big">
+            <div class="pro">
+                <img src="images/hoodie.jpg" onclick="window.location.href='singlepro.html?id=5';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[5]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/shi3.jpg" onclick="window.location.href='singlepro.html?id=6';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[6]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/t1.jpg" onclick="window.location.href='singlepro.html?id=7';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[7]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="product">
+
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/hod1.jpg" onclick="window.location.href='singlepro.html?id=8';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[8]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/hod4.jpg" onclick="window.location.href='singlepro.html?id=9';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[9]); return false;"><i class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/pant1.jpg" onclick="window.location.href='singlepro.html?id=10';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[10]); return false;"><i
+                        class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+
+
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/plane1.jpg" onclick="window.location.href='singlepro.html?id=11';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[11]); return false;"><i
+                        class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/hod2.jpg" onclick="window.location.href='singlepro.html?id=12';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[12]); return false;"><i
+                        class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/pant2.webp" onclick="window.location.href='singlepro.html?id=13';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[13]); return false;"><i
+                        class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/plan2.jpg" onclick="window.location.href='singlepro.html?id=14';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[14]); return false;"><i
+                        class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/hod3.jpg" onclick="window.location.href='singlepro.html?id=15';" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#" onclick="addToCart(products[15]); return false;"><i
+                        class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </section>
+    <section id="pagenumber" class="section-p1">
+        <!-- <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">=></i></a> -->
+    </section>
+
+    <footer class="ecom-footer">
+        <div class="footer-top">
+
+            <div class="footer-column">
+                <h3>YourBrand</h3>
+                <p>YourBrand is your trusted marketplace for quality products at best prices.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                <h4 style="margin-top:15px;">Visit Our Store</h4>
+                <a class="map-link" href="https://maps.google.com" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i> Dummy Location Map
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 YourBrand. All rights reserved.
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>

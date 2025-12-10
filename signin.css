@@ -1,0 +1,86 @@
+/* Beginner Style Sign In Page */
+
+#signin-page {
+    /* Simple background color, no images or gradients */
+    background-color: #ffffff;
+    padding: 50px 20px;
+    display: block;
+    /* Removed flex centering */
+    text-align: center;
+}
+
+.signin-container {
+    /* Basic box styling */
+    border: 2px solid #000000;
+    margin: 0 auto;
+    width: 300px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.signin-container h2 {
+    /* Standard font */
+    font-family: Arial, sans-serif;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.signin-container p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    /* Basic input styles */
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #000;
+}
+
+.input-group i {
+    display: none;
+    /* Removed icons for simplicity */
+}
+
+.options {
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 12px;
+}
+
+button.normal {
+    /* Simple button */
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button.normal:hover {
+    background-color: #333;
+}
+
+.social-login {
+    display: none;
+    /* Hiding social login for simpler look */
+}
+
+.signup-link {
+    margin-top: 15px;
+    font-size: 12px;
+}

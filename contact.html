@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - YourBrand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #contact-details {
+            padding: 40px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .details-box {
+            width: 50%;
+        }
+
+        .details-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .details-box div {
+            padding-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .details-box div i {
+            font-size: 25px;
+            margin-right: 15px;
+        }
+
+        .details-box div p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .map-box {
+            width: 45%;
+            height: 400px;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header-->
+    <section id="header">
+        <a href="index.html"><img src="images/1logo-removebg-preview.png" class="logo" alt=""></a>
+
+        <div class="babu">
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shopindex.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html">shoe</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i><span id="cart-count">0</span></a>
+                </li>
+                <a href="#" id="close"><i class="fa fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i></a>
+            <i id="bar" class="fa fa-bars"></i>
+        </div>
+    </section>
+
+    <section id="banner-add"
+        style="background-image: url('images/banner.png'); height: 20vh; display:flex; justify-content:center; align-items:center;">
+        <h2 style="color:rgb(0, 0, 0);">#Let's_Talk</h2>
+    </section>
+
+    <section id="contact-details" class="section-p1">
+        <div class="details-box">
+            <span>GET IN TOUCH</span>
+            <h2>Visit one of our agency locations or contact us today</h2>
+            <h3>Head Office</h3>
+            <div>
+                <i class="fa-solid fa-map"></i>
+                <p>56 Glassford Street Glasgow G1 1UL New York</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <p>contact@example.com</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-phone-alt"></i>
+                <p>contact@example.com</p>
+            </div>
+            <div>
+                <i class="fa-regular fa-clock"></i>
+                <p>Monday to Saturday: 9.00am to 16.pm</p>
+            </div>
+        </div>
+        <div class="map-box">
+            <!-- Placeholder for map -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.31604070622!2d78.24322965476145!3d17.41229980145453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1716616422830!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer class="ecom-footer">
+        <div class="footer-top">
+
+            <div class="footer-column">
+                <h3>YourBrand</h3>
+                <p>YourBrand is your trusted marketplace for quality products at best prices.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                <h4 style="margin-top:15px;">Visit Our Store</h4>
+                <a class="map-link" href="https://maps.google.com" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i> Dummy Location Map
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 YourBrand. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

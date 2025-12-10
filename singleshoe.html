@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singlepro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<style>
+    #header {
+        position: static;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    body {
+        background-color: rgb(228, 229, 230);
+    }
+
+    .cards {
+        margin: 20px;
+        margin-top: 60px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px 20px;
+
+
+    }
+
+    .card {
+        width: 200px;
+        height: 280px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+        border-radius: 15px 15px 8px 8px;
+
+    }
+
+    .cardimg img {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+
+    }
+
+    .cardimg img:hover {}
+
+    .card:hover {
+        transition: 0.3s;
+        transform: scale(1.0);
+        box-shadow: 10px 20px 25px 0 rgba(0, 0, 0, 0.2);
+
+    }
+
+    .cardinfo h3 {
+        margin: 5px;
+        text-align: center;
+
+
+    }
+
+    .cardinfo p {
+        margin: 5px;
+        text-align: center;
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    .details .rating {
+        color: rgb(41, 95, 0);
+    }
+
+    .rating {
+        font-weight: bold;
+    }
+
+    .details p {
+        font-weight: bold;
+    }
+
+    .card:hover {
+        background-color: rgb(207, 249, 235);
+
+    }
+
+    .banner1 {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    .bannerimg img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+
+    }
+
+    .bannerimg p {
+        position: absolute;
+        top: 70px;
+        left: 780px;
+        background-color: red;
+        padding: 10px 25px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        border-radius: 20px;
+
+    }
+</style>
+
+<body>
+
+    <!--header-->
+    <section id="header">
+        <a href="#"><img src="images/1logo-removebg-preview.png" class="logo" alt="">
+
+            <div class="babu">
+                <ul id="navbar">
+                    <li><a onclick="window.location.href='index.html';">Home</a></li>
+                    <li><a onclick="window.location.href='shopindex.html';">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a class="active" href="singleshoe.html">shoe</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+
+                    <li><a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i><span
+                                id="cart-count">0</span></a></li>
+                    <a href="#" id="close"><i class="fa fa-times"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"> <i class="fa-solid fa-cart-arrow-down"></i></a>
+                <i id="bar" class="fa fa-bars"></i>
+            </div>
+    </section>
+    <div class="banner1">
+        <div class="bannerimg">
+            <img src="/images/bannershoee.png">
+            <p>30% off</p>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="cardimg">
+                <img src="/images/nike1.jpeg" alt="">
+
+            </div>
+            <div class="cardinfo">
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[16]); return false;"></i>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardimg">
+                <img src="/images/nike2.jpeg" style="height: 198px;""">
+
+            </div>
+            <div class="cardinfo">
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>$150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[17]); return false;"></i>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardimg">
+                <img src="/images/nike4.jpeg" alt="">
+
+            </div>
+            <div class="cardinfo">
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>$150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[18]); return false;"></i>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardimg">
+                <img src="/images/nike5.jpeg" alt="">
+
+            </div>
+            <div class="cardinfo">
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>$150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[19]); return false;"></i>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardimg">
+                <img src="/images/Lee Cooper 1.jpeg" alt="" height="200px">
+
+            </div>
+            <div class="cardinfo">
+
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>$150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[20]); return false;"></i>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardimg">
+                <img src="images/leecoper 2.jpeg" alt="">
+
+            </div>
+            <div class="cardinfo">
+
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>$150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[21]); return false;"></i>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="cardimg">
+                <img src="/images/leecoper 3.jpeg" alt="" height="200px">
+
+            </div>
+            <div class="cardinfo">
+
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>$150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[22]); return false;"></i>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardimg">
+                <img src="/images/leecoper4.jpeg" alt="">
+
+            </div>
+            <div class="cardinfo">
+
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>$150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[23]); return false;"></i>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="cardimg">
+                <img src="/images/nike7.jpeg" style="height: 200px;" alt="">
+
+            </div>
+            <div class="cardinfo">
+
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>$150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[24]); return false;"></i>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardimg">
+                <img src="/images/nike6.jpeg" alt="">
+
+            </div>
+            <div class="cardinfo">
+
+                <h3>Nike Max </i></h3>
+
+                <div class="details">
+                    <p>$150.00</p>
+                    <p class="rating">4.6★</p>
+                    <i class="fa-solid fa-cart-shopping" style="cursor: pointer;"
+                        onclick="addToCart(products[25]); return false;"></i>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <footer class="ecom-footer">
+        <div class="footer-top">
+
+            <div class="footer-column">
+                <h3>YourBrand</h3>
+                <p>YourBrand is your trusted marketplace for quality products at best prices.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                <h4 style="margin-top:15px;">Visit Our Store</h4>
+                <a class="map-link" href="https://maps.google.com" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i> Dummy Location Map
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 YourBrand. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>

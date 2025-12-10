@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singlepro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<style>
+    #header {
+        position: static;
+    }
+</style>
+
+<body>
+    <!--header-->
+    <section id="header">
+        <a href="#"><img src="images/1logo-removebg-preview.png" class="logo" alt="">
+
+            <div class="babu">
+                <ul id="navbar">
+                    <li><a onclick="window.location.href='index.html';">Home</a></li>
+                    <li><a class="active" onclick="window.location.href='shopindex.html';">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog.html">shoe</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+
+                    <li><a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i><span
+                                id="cart-count">0</span></a></li>
+                    <a href="#" id="close"><i class="fa fa-times"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i></a>
+                <i id="bar" class="fa fa-bars"></i>
+            </div>
+    </section>
+
+    <section class="prodetails">
+        <div class="bigimg">
+            <img src="images/shi1.jpg " id="bigimg" width="100%">
+            <div class="smallimages">
+                <div class="smimg">
+                    <img src="images/small img3.3.jpg" class="smallimg" width="100%">
+
+                </div>
+                <div class="smimg">
+                    <img src="images/small img 3.jpg" class="smallimg" width="100%">
+
+                </div>
+                <div class="smimg">
+                    <img src="images/smallimg1.1.jpg" class="smallimg" width="100%">
+
+                </div>
+                <div class="smimg">
+                    <img src="images/small img 3.jpg" class="smallimg" width="100%">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cost">
+            <h5>Home/T-shirt</h5>
+            <h4>Men's Fshion shirt</h4>
+            <h3>$120.00</h3>
+            <select id="selec">
+                <option>select size</option>
+                <option>s</option>
+                <option>M</option>
+                <option>x</option>
+                <option>L</option>
+            </select>
+            <input id="inpu" type="number" value="1">
+            <button class="add"
+                onclick="addToCart({id:999, name:'Mens Fashion Shirt', price:120, img:'images/shi1.jpg'});">Add to
+                Cart</button>
+            <h3 id="lorem">Product Details</h3>
+            <div class="lorem1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iusto nemo est cumque nisi! Fuga
+                voluptatibus aperiam rerum blanditiis expedita tempore aspernatur repellendus, dolorum, quos alias minus
+                aliquid doloremque omnis quod quisquam non earum at tempora ratione. Voluptas consequatur unde eaque
+                ducimus minima architecto excepturi iure ipsa, ratione quisquam impedit.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="product">
+
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/t1.jpg" alt="" onclick="window.location.href='singlepro.html';">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#"
+                    onclick="addToCart({id:1, name:'Adidas T-Shirt', price:50, img:'images/t1.jpg'}); return false;"><i
+                        class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/shi1.jpg" alt="" onclick="window.location.href='singlepro.html';">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#"
+                    onclick="addToCart({id:2, name:'Adidas T-Shirt', price:50, img:'images/shi1.jpg'}); return false;"><i
+                        class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/t2.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+
+
+        </div>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/shi2.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h4>adidas tshirt</h4>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                    <h5>$50</h5>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+    </div>
+    </section>
+    <script>
+        const bigimage = document.getElementById("bigimg");
+        const smallimg = document.getElementsByClassName("smallimg");
+        smallimg[0].onclick = function () {
+            bigimage.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function () {
+            bigimage.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function () {
+            bigimage.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function () {
+            bigimage.src = smallimg[3].src;
+
+        }
+        window.onload = () => {
+            document.body.style.opacity = "1";
+        };
+
+    </script>
+
+    <!-- 
+    <script>
+const bigimage = document.getElementById("bigimg");
+const smallimg = document.getElementsByClassName("smallimg");
+
+for (let i = 0; i < smallimg.length; i++) {
+  smallimg[i].onclick = function() {
+    bigimage.style.opacity = "0"; // fade out
+    setTimeout(() => {
+      bigimage.src = smallimg[i].src;
+      bigimage.style.opacity = "1"; // fade in
+    }, 200);
+  }
+}
+</script>
+ -->
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>

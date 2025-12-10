@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - YourBrand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="signin.css">
+</head>
+
+<body>
+    <!--header-->
+    <section id="header">
+        <a href="index.html"><img src="images/1logo-removebg-preview.png" class="logo" alt=""></a>
+
+        <div class="babu">
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shopindex.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html">shoe</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="signin.html">Sign In</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
+                <a href="#" id="close"><i class="fa fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i></a>
+            <i id="bar" class="fa fa-bars"></i>
+        </div>
+    </section>
+
+    <section id="signin-page" class="section-p1">
+        <div class="signin-container">
+            <h2>Welcome Back</h2>
+            <p>Sign in to your account to continue</p>
+            <form action="#" onsubmit="alert('Successfuly signed'); return false;">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="options">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="normal">Sign In</button>
+                <div class="social-login">
+                    <p>Or sign in with</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="#">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="ecom-footer">
+        <div class="footer-top">
+
+            <div class="footer-column">
+                <h3>YourBrand</h3>
+                <p>YourBrand is your trusted marketplace for quality products at best prices.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                <h4 style="margin-top:15px;">Visit Our Store</h4>
+                <a class="map-link" href="https://maps.google.com" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i> Dummy Location Map
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 YourBrand. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #cart {
+            padding: 80px 40px;
+            overflow-x: auto;
+        }
+
+        #cart table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            white-space: nowrap;
+        }
+
+        #cart table img {
+            width: 70px;
+        }
+
+        #cart table td:nth-child(1) {
+            width: 100px;
+            text-align: center;
+        }
+
+        #cart table td:nth-child(2) {
+            width: 150px;
+            text-align: center;
+        }
+
+        #cart table td:nth-child(3) {
+            width: 250px;
+            text-align: center;
+        }
+
+        #cart table td:nth-child(4),
+        #cart table td:nth-child(5),
+        #cart table td:nth-child(6) {
+            width: 150px;
+            text-align: center;
+        }
+
+        #cart table thead {
+            border: 1px solid #e2e9e1;
+            border-left: none;
+            border-right: none;
+        }
+
+        #cart table thead td {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            padding: 18px 0;
+        }
+
+        #cart table tbody tr td {
+            padding-top: 15px;
+        }
+
+        #cart table tbody td {
+            font-size: 13px;
+        }
+
+        /* Remove Button */
+        .remove-btn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #cart-add {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            /* Align to right */
+        }
+
+        #subtotal {
+            width: 50%;
+            margin-bottom: 30px;
+            border: 1px solid #e2e9e1;
+            padding: 30px;
+        }
+
+        #subtotal table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #subtotal table td {
+            width: 50%;
+            border: 1px solid #e2e9e1;
+            padding: 10px;
+            font-size: 13px;
+        }
+
+        button.normal {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 15px 30px;
+            color: #000;
+            background-color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #000;
+            outline: none;
+            transition: 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header-->
+    <section id="header">
+        <a href="index.html"><img src="images/1logo-removebg-preview.png" class="logo" alt=""></a>
+
+        <div class="babu">
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shopindex.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html">shoe</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="cart.html" class="active"><i class="fa-solid fa-cart-arrow-down"></i><span
+                            id="cart-count">0</span></a></li>
+                <a href="#" id="close"><i class="fa fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i></a>
+            <i id="bar" class="fa fa-bars"></i>
+        </div>
+    </section>
+
+    <section id="pageheader" class="about-header"
+        style="background-image: url('images/banner.png'); height: 30vh; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <h2 style="color:rgb(0, 0, 0);">#cart</h2>
+        <p style="color:rgb(254, 115, 115);">Add your coupon code & SAVE upto 70%!</p>
+    </section>
+
+    <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody id="cart-tbody">
+                <!-- Cart Items will be inserted here JS -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="cart-add" class="section-p1">
+        <div id="subtotal">
+            <h3>Cart Totals</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td id="cart-subtotal">$0</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="cart-total"><strong>$0</strong></td>
+                </tr>
+            </table>
+            <button class="normal">Proceed to checkout</button>
+        </div>
+    </section>
+
+    <footer class="ecom-footer">
+        <div class="footer-bottom">
+            © 2025 YourBrand. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function displayCart() {
+            let tbody = document.getElementById('cart-tbody');
+            tbody.innerHTML = '';
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = 0;
+
+            if (cart.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6">Your Cart is Empty</td></tr>';
+                updateTotals(0);
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                // Ensure quantity is set, default to 1
+                if (!item.quantity) {
+                    item.quantity = 1;
+                }
+
+                let itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                let tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><button class="remove-btn" onclick="removeItem(${index})"><i class="fa-solid fa-trash"></i></button></td>
+                    <td><img src="${item.img || 'images/t1.jpg'}" alt=""></td>
+                    <td>${item.name || 'Unknown Product'}</td>
+                    <td>$${item.price || 0}</td>
+                    <td><input type="number" value="${item.quantity}" min="1" max="4" style="width: 50px; padding: 5px;" onchange="updateQuantity(${index}, this.value)"></td>
+                    <td>$${itemTotal}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Save any default quantity updates back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateTotals(total);
+        }
+
+        function updateQuantity(index, newQuantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Enforce limits
+            if (newQuantity > 4) newQuantity = 4;
+            if (newQuantity < 1) newQuantity = 1;
+
+            cart[index].quantity = parseInt(newQuantity);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart(); // Re-render to update subtotals
+        }
+
+        function updateTotals(total) {
+            document.getElementById('cart-subtotal').innerText = "$" + total;
+            document.getElementById('cart-total').innerHTML = "<strong>$" + total + "</strong>";
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+            updateCartCount(); // from script.js
+        }
+
+        window.addEventListener('load', displayCart);
+    </script>
+</body>
+
+</html>
